@@ -21,13 +21,9 @@ async function autoScroll(page) {
 }
 
 async function autoClick(page) {
-  console.log("버튼클릭 1단계");
   await page.evaluate(async () => {
-    console.log("버튼클릭 2단계");
     await new Promise((resolve, reject) => {
-      console.log("버튼클릭 3단계");
       var timer = setInterval(() => {
-        console.log("인터벌 시작");
         if (
           document.querySelectorAll(
             ".ofeed-intersection-area .ofeed-thumbnail-grid__item"
