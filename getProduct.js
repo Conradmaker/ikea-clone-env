@@ -1,6 +1,6 @@
 const fs = require("fs");
 const puppeteer = require("puppeteer");
-const jsonData = require("./어린이 IKEA.json");
+const jsonData = require("./home-funising/침실.json");
 
 const productData = [];
 async function getSummary(page) {
@@ -115,7 +115,7 @@ async function run(page, data) {
 }
 
 function delay() {
-  return new Promise((resolve) => setTimeout(resolve, 3000));
+  return new Promise((resolve) => setTimeout(resolve, 500));
 }
 
 async function getData() {
@@ -136,7 +136,7 @@ async function getData() {
   //   });
   await browser.close();
 
-  const path = "어린이 IKEA 상품.json";
+  const path = "침실 상품.json";
   fs.writeFileSync(path, JSON.stringify(productData));
 }
 getData();

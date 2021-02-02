@@ -27,7 +27,7 @@ async function autoClick(page) {
         if (
           document.querySelectorAll(
             ".ofeed-intersection-area .ofeed-thumbnail-grid__item"
-          ).length > 100
+          ).length > 50
         ) {
           console.log(
             document.querySelectorAll(
@@ -79,7 +79,7 @@ async function run(cateIndex = 0) {
   const page = await browser.newPage();
 
   // 웹사이트 로딩
-  await page.goto("https://www.ikea.com/kr/ko/?rooms=accessories", {
+  await page.goto("https://www.ikea.com/kr/ko/?rooms=bedroom", {
     timeout: 000,
     waitUntil: "domcontentloaded",
   });
@@ -136,14 +136,14 @@ async function run(cateIndex = 0) {
         imgData,
         link: divLink,
         dotData,
-        categoryId: 9,
-        cateName: "소품",
+        categoryId: 0,
+        cateName: "침실",
       };
     });
   });
   //상단 테이블의 th 제목을 가져오고 싶은경우
   console.log(arr.length);
-  const path = "소품.json";
+  const path = "침실.json";
   fs.writeFileSync(path, JSON.stringify(arr));
   // 브라우저 닫기
   await browser.close();
